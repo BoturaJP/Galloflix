@@ -1,0 +1,7 @@
+// acesso a dados
+dotnet add package Microsoft.EntityFrameworkCore --version 6.0.16
+dotnet add package Microsoft.EntityFrameworkCore.Design --version 6.0.16
+dotnet add package Pomelo.EntityFrameworkCore.MySql --version 6.0.2
+
+// pacote do identity
+dotnet add package Microsoft.AspNetCore.Identity.EntityFrameworkCore --version 6.0.16
