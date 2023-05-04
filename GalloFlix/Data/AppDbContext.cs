@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace GalloFlix.Data 
 {
-    public class AppDbContext : IdentityDbContext
+    dopublic class AppDbContext : IdentityDbContext
     {
         public AppDbContext(DbContextOptions options) : base(options)
         {
@@ -72,7 +72,7 @@ namespace GalloFlix.Data
 
             builder.Entity<MovieGenre>()
                 .HasOne(mg => mg.Movie)
-                .WithMany(m => m.Genres)
+                .WithMany(m => m.Genre)
                 .HasForeignKey(mg => mg.MovieId);
 
 
