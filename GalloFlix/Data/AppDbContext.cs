@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace GalloFlix.Data 
 {
-    dopublic class AppDbContext : IdentityDbContext
+    public class AppDbContext : IdentityDbContext
     {
         public AppDbContext(DbContextOptions options) : base(options)
         {

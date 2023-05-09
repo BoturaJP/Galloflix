@@ -1,5 +1,5 @@
-using.GalloFlix.Data;
-using.GalloFlix.Models;
+using GalloFlix.Data;
+using GalloFlix.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -10,15 +10,15 @@ builder.Services.AddControllersWithViews();
 
 // Objetos auxiliares da Conexão
 string conn =  builder.Configuration.GetConnectionString("GalloFlix");
-string version = ServerVersion.AutoDetect(conn);
+var version = ServerVersion.AutoDetect(conn);
 
 builder.Services.AddDbContext<AppDbContext>(options =>
-options.UseMysql(conn, version)
+    options.UseMySql(conn, version)
 );
 
-builder.services.AddIdentity<AppUser, IdentityRole>()
-.AddIdentityFrameworkStores<AppDbContext>()
-.AddfaultTokenProviders();
+builder.Services.AddIdentity<AppUser, IdentityRole>()
+    .AddEntityFrameworkStores<AppDbContext>()
+    .AddDefaultTokenProviders();
 
 var app = builder.Build();
 
