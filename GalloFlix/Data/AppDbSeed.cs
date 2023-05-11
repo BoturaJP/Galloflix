@@ -13,19 +13,19 @@ namespace GalloFlix.Data;
             {
                 new IdentityRole()
                 {
-                    Id = Guid.NewGuid().ToStirng(),
+                    Id = Guid.NewGuid().ToString(),
                     Name = "Administrador",
                     NormalizedName = "ADMINISTRADOR"
                 },
                 new IdentityRole()
                 {
-                    Id = Guid.NewGuid().ToStirng(),
+                    Id = Guid.NewGuid().ToString(),
                     Name = "Moderador",
                     NormalizedName = "MODERADOR"
                 },
                  new IdentityRole()
                 {
-                    Id = Guid.NewGuid().ToStirng(),
+                    Id = Guid.NewGuid().ToString(),
                     Name = "Usuário",
                     NormalizedName = "USUÁRIO"
                 },
@@ -38,14 +38,14 @@ namespace GalloFlix.Data;
             {
                 new AppUser()
                 {
-                    Id = Guid.NewGuid(). ToStirng(),
-                    Name = "Rafael Botura"
-                    DateOBirth = DateTime.Parse("28/06/2006"),
-                    Email = "rafinhabotura@gmail.com"
+                    Id = Guid.NewGuid().ToString(),
+                    Name = "Rafael Botura",
+                    DateOfBirth = DateTime.Parse("28/06/2006"),
+                    Email = "rafinhabotura@gmail.com",
                     NormalizedEmail = "RAFINHABOTURA@GMAIL.COM",    
                     UserName = "BotaTudo",
                     NormalizedUserName = "BOTATUDO",
-                    LockoutEnable = false,
+                    LockoutEnabled = false,
                     PhoneNumber = "14981357504",
                     PhoneNumberConfirmed = true,
                     EmailConfirmed = true,
@@ -55,13 +55,13 @@ namespace GalloFlix.Data;
             foreach (var user in users)
             {
                 PasswordHasher<AppUser> pass = new();
-                user.PasswordHasher = pass.HashPassword(user, "@Etec123");
+                user.PasswordHash = pass.HashPassword(user, "@Etec123");
             }
             builder.Entity<AppUser>().HasData(users);
             #endregion
 
             #region Populate AppUser Role - Usuário e seu Perfil
-            List<IdentityUserRole<string>> UserRoles = new()
+            List<IdentityUserRole<string>> userRoles = new()
             {
                 new IdentityUserRole<string>()
                 {
@@ -69,7 +69,7 @@ namespace GalloFlix.Data;
                     RoleId = roles[0].Id
                 }
             };
-            List<IdentityUserRole<string>>(). HasData(UserRoles);
+            builder.Entity<IdentityUserRole<string>>().HasData(userRoles);
             #endregion
 
         }
