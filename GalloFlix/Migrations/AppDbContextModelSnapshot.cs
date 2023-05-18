@@ -171,22 +171,22 @@ namespace GalloFlix.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "b3c009ee-9585-4f2d-8ca9-e8b1136ff973",
-                            ConcurrencyStamp = "bf338b48-f14c-43cb-a156-89819177901c",
+                            Id = "8b0656ee-5604-41dc-8155-534a2ca3fec3",
+                            ConcurrencyStamp = "7a14a104-2eb4-4419-b3f7-595d0e3e0080",
                             Name = "Administrador",
                             NormalizedName = "ADMINISTRADOR"
                         },
                         new
                         {
-                            Id = "96906a09-06ad-42b5-afde-5c5db34f3db9",
-                            ConcurrencyStamp = "a7c5647a-2b22-4526-909d-cac747b782c4",
+                            Id = "a7df3b14-6d3c-4e34-ad1f-a5f7ee814ee7",
+                            ConcurrencyStamp = "86d2bc9c-db88-454c-80f7-1ffe6c29c7a0",
                             Name = "Moderador",
                             NormalizedName = "MODERADOR"
                         },
                         new
                         {
-                            Id = "af22d4b5-cafb-4ed6-a35c-89a33fb74153",
-                            ConcurrencyStamp = "9529c500-f66a-4128-9de6-1b79ca92ca3a",
+                            Id = "1fe9e945-bb4f-480c-b27c-110361c5e2bd",
+                            ConcurrencyStamp = "dd52c355-9498-4fa1-b7ed-79c91ac108d3",
                             Name = "Usuário",
                             NormalizedName = "USUÁRIO"
                         });
@@ -347,8 +347,8 @@ namespace GalloFlix.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "41ec9a71-8d2c-4462-85eb-e3f3ad35adf5",
-                            RoleId = "b3c009ee-9585-4f2d-8ca9-e8b1136ff973"
+                            UserId = "f55f5987-7d18-41ec-b186-f0250d0d2389",
+                            RoleId = "8b0656ee-5604-41dc-8155-534a2ca3fec3"
                         });
                 });
 
@@ -392,18 +392,18 @@ namespace GalloFlix.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "41ec9a71-8d2c-4462-85eb-e3f3ad35adf5",
+                            Id = "f55f5987-7d18-41ec-b186-f0250d0d2389",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "bfa2cded-a341-4e5d-9fe2-425231674df4",
+                            ConcurrencyStamp = "c393dfb3-0f8c-453b-92c2-f4abb58ccb03",
                             Email = "rafinhabotura@gmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "RAFINHABOTURA@GMAIL.COM",
                             NormalizedUserName = "BOTATUDO",
-                            PasswordHash = "AQAAAAEAACcQAAAAEGbE19gVjzFioMBNFe2i8m3S56LknqjVkC6LN1GWZ7jbsQTUbXrp74KnmTrgAxgLlQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAENty88zow4mhs8q6+UDR0vy8T4ug7czZVu99GNarGYZCTmhvoUu6u/a9XlwHZN2mkg==",
                             PhoneNumber = "14981357504",
                             PhoneNumberConfirmed = true,
-                            SecurityStamp = "5bccee54-c208-43ed-8940-ebe5a8bf3756",
+                            SecurityStamp = "da58aed5-8fe6-4195-b24c-f735e79eeaee",
                             TwoFactorEnabled = false,
                             UserName = "BotaTudo",
                             DateOfBirth = new DateTime(2006, 6, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),

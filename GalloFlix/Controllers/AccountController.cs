@@ -1,6 +1,9 @@
 using GalloFlix.DataTransferObjects;
+using GalloFlix.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Identity;
+
 
 namespace GalloFlix.Controllers;
 
@@ -8,8 +11,12 @@ namespace GalloFlix.Controllers;
     public class AccountController : Controller
     {
         private readonly ILogger<AccountController> _logger;
+        private readonly SignInManager<AppUser> _signInManager;
+        private readonly UserManager<AppUser> _userManager; 
 
-        public AccountController(ILogger<AccountController> logger)
+        public AccountController(ILogger<AccountController> logger,
+         SignInManager<AppUser> signInManager,
+         UserManager<AppUser> userManager)
         {
             _logger = logger;
         }
@@ -25,12 +32,12 @@ namespace GalloFlix.Controllers;
         {
             LoginDto login = new();
             login.ReturnUrl = returnUrl ?? Url.Content("~/");
-            return View();
+            return View(login);
         }
 
         [HttpPost]
 
-        public IActionResult Login()
+        public IActionResult Login(LoginDto login)
         {
             return View();
         }
