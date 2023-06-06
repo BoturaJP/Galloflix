@@ -28,12 +28,12 @@ namespace GalloFlix.DataTransferObjects
         [Required(ErrorMessage = "Por favor, informe sua Senha")]
         [StringLength(20, MinimumLength = 6,
          ErrorMessage = " A senha deve possuir no máximo 20 caracteres e no mínimo 6")]
-        public DateTime Password { get; set; }  
+        public string Password { get; set; }  
 
         
         [DataType(DataType.Password)]
         [Display(Name = "Confirmar Senha")]
         [Compare("Password", ErrorMessage = "As Senhas não conferem.")]
-        public DateTime ConfirmPassword { get; set; }  
+        public string ConfirmPassword { get; set; }  
     }
 }
