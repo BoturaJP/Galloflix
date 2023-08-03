@@ -1,31 +1,28 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace GalloFlix.Models
+namespace GalloFlix.Models;
+[Table("MovieComment")]
+public class MovieComment
 {
-   [Table("MovieComment")]
-    public class MovieComment
-    {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+    [Key]
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    public int Id { get; set; }
 
-        [Required]
-        public int MovieId { get; set; }
-        [ForeignKey("MovieId")]
-        public Movie Movie { get; set; } //propriedade de navegação
+    [Required]
+    public int MovieId { get; set; }
+    [ForeignKey("MovieId")]
+    public Movie Movie { get; set; } //propriedade de navegação
 
-        [Required]
-        public string UserId { get; set; }
-        [ForeignKey("UserId")]
-        public AppUser User { get; set; }
+    [Required]
+    public string UserId { get; set; } 
+    [ForeignKey("UserId")]
+    public AppUser User { get; set; }  
 
-        [Required]
-        [StringLength(1000)]
-        public string CommentText { get; set; }
+    [Required]
+    [StringLength(1000)]
+    public string CommentText { get; set; }
 
-        [Required]
-        public DateTime CommenDate { get; set; } = DateTime.Now;
-
-    }
+    [Required]
+    public DateTime CommentDate { get; set; }
 }

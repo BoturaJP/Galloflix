@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace GalloFlix.Migrations
 {
-    public partial class criarbanco : Migration
+    public partial class criandobanco : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -36,7 +36,7 @@ namespace GalloFlix.Migrations
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     Title = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    TitleOriginal = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false)
+                    OriginalTitle = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Synopsis = table.Column<string>(type: "varchar(8000)", maxLength: 8000, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
@@ -174,7 +174,7 @@ namespace GalloFlix.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     CommentText = table.Column<string>(type: "varchar(1000)", maxLength: 1000, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    CommenDate = table.Column<DateTime>(type: "datetime(6)", nullable: false)
+                    CommentDate = table.Column<DateTime>(type: "datetime(6)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -329,20 +329,20 @@ namespace GalloFlix.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "1fe9e945-bb4f-480c-b27c-110361c5e2bd", "dd52c355-9498-4fa1-b7ed-79c91ac108d3", "Usuário", "USUÁRIO" },
-                    { "8b0656ee-5604-41dc-8155-534a2ca3fec3", "7a14a104-2eb4-4419-b3f7-595d0e3e0080", "Administrador", "ADMINISTRADOR" },
-                    { "a7df3b14-6d3c-4e34-ad1f-a5f7ee814ee7", "86d2bc9c-db88-454c-80f7-1ffe6c29c7a0", "Moderador", "MODERADOR" }
+                    { "35a07321-e975-48dd-aff2-92cee9615f12", "f4bb4d63-e244-400c-8090-40a9667929b1", "Usuário", "USUÁRIO" },
+                    { "6f147248-e7b0-4c5d-9134-17e3fba43cd5", "ef48fb03-98a1-4e81-b617-5efb808083d5", "Moderador", "MODERADOR" },
+                    { "d4ff1c17-005f-4c68-91ab-c092620a6b05", "cf33f2ef-bad6-4da4-88ec-83d3e67d078d", "Administrador", "ADMINISTRADOR" }
                 });
 
             migrationBuilder.InsertData(
                 table: "Users",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "DateOfBirth", "Discriminator", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "Name", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "ProfilePicture", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "f55f5987-7d18-41ec-b186-f0250d0d2389", 0, "c393dfb3-0f8c-453b-92c2-f4abb58ccb03", new DateTime(2006, 6, 28, 0, 0, 0, 0, DateTimeKind.Unspecified), "AppUser", "rafinhabotura@gmail.com", true, false, null, "Rafael Botura", "RAFINHABOTURA@GMAIL.COM", "BOTATUDO", "AQAAAAEAACcQAAAAENty88zow4mhs8q6+UDR0vy8T4ug7czZVu99GNarGYZCTmhvoUu6u/a9XlwHZN2mkg==", "14981357504", true, "/img/users/avatar.png", "da58aed5-8fe6-4195-b24c-f735e79eeaee", false, "BotaTudo" });
+                values: new object[] { "704ac437-67ad-4ad8-8ac3-89a719571920", 0, "1df3c8cd-0484-43fc-a02a-27810daa86ae", new DateTime(2006, 6, 28, 0, 0, 0, 0, DateTimeKind.Unspecified), "AppUser", "rafinhabotura@gmail.com", true, false, null, "Rafael Botura", "RAFINHABOTURA@GMAIL.COM", "BOTATUDO", "AQAAAAEAACcQAAAAEEFdC4cP4LfrYZgcjz3uYONvce+bznjJQ20e/Y5anbit4vb/LCo1lwPuqw5rdcFHHg==", "14981357504", true, "/img/users/avatar.png", "aa7509b1-eb83-45d3-ba1c-59b26d60046e", false, "BotaTudo" });
 
             migrationBuilder.InsertData(
                 table: "UserRoles",
                 columns: new[] { "RoleId", "UserId" },
-                values: new object[] { "8b0656ee-5604-41dc-8155-534a2ca3fec3", "f55f5987-7d18-41ec-b186-f0250d0d2389" });
+                values: new object[] { "d4ff1c17-005f-4c68-91ab-c092620a6b05", "704ac437-67ad-4ad8-8ac3-89a719571920" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_MovieComment_MovieId",

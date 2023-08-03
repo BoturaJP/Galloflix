@@ -1,36 +1,16 @@
 main {
-    height: calc(100vh - 120px);
+    min-height: calc(100vh - 140px);
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 form {
-   width: 400px;
+    width: 400px !important;
 }
 
-.border-text,
-.border-text-register{
-    position: relative;
-    margin-top: 30px;
-    height: 25px;
-    border-top: 1px solid black;
-    color: black;
-}
-
-.border-text::after,
-.border-text-register::after{
-    content: "Novo por Aqui?";
-    position: absolute;
-    background-color: white;
-    top: -13px;
-    left: 33.3%;
-    padding: 0 10px;
-}
-
-.border-text::after {
-    content: "Já possui uma Conta?" !important;
-    left: 28% !important;
+.form-register {
+    width: 600px !important;
 }
 
 .forgetPassword{
@@ -40,3 +20,23 @@ form {
 .forgetPassword:hover{
     text-decoration: underline;
 }
+
+.separator{
+    display: flex;
+    align-items: center;
+    color: var(--bs-body-color);
+    margin: 15px 0;
+  }
+  
+  .separator h6{
+    padding: 0 10px;
+    font-weight: normal;
+    color: var(--bs-body-color);
+    margin-bottom: 0.2rem;
+  }
+  
+  .separator .line{
+    flex: 1;
+    height: 1px;
+    background-color: var(--bs-body-color);
+  }
